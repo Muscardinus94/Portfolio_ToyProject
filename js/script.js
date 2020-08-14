@@ -61,7 +61,7 @@ function showAbout() {
   div.classList.add('about');
   let img = document.createElement('img');
   img.classList.add('photo');
-  img.src = "../img/profile.jpg";
+  img.src = "./img/profile.jpg";
   let p = document.createElement('p');
   p.classList.add('introduction');
   p.innerHTML = "김제형<br>FrontEnd Developer";
