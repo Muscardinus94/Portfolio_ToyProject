@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  font-family: 'Roboto Slab', serif;
+  background: url(../img/background1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+.main-nav {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav div {
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 20px;
+  margin: 20px;
+  transition: 0.5s;
+  width: 150px;
+  text-align: center;
+}
+
+.main-nav div:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.main-contents {
+  flex-grow: 1;
+  display: grid;
+}
+
+.home {
+  display: grid;
+  grid-template-rows: 1fr 0.5fr 0.5fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.home>p {
+  font-size: 45px;
+  color: white;
+}
+
+.home i {
+  transition: 0.5s;
+}
+
+.home i:hover {
+  transform: scale(1.1);
+}
+
+.fa-anchor {
+  color: white;
+}
+
+.button {
+  color: white;
+  border: 2px solid white;
+  padding: 10px;
+  width: 600px;
+  background-color: transparent;
+  transition: background linear 300ms, color linear 300ms
+}
+
+.button:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+}
+
+.introduction {
+  align-self: top;
+  justify-self: start;
+  font-size: 2em;
+}
+
+.photo {
+  justify-self: center;
+  height: 400px;
+  width: 300px;
+}
+
+.contact {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+#phone {
+  font-size: 2em;
+  align-self: end;
+}
+
+#email {
+  font-size: 2em;
+  align-self: start;
+}
+
+.contact i {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.interest {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.interest i {
+  transition: 0.5s;
+}
+
+.interest i:hover {
+  transform: scale(1.1);
+}
+
+.copyright {
+  color: white;
+  text-align: center;
+  bottom: 10px;
+  width: 100%;
+}
