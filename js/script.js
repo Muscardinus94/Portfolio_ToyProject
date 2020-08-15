@@ -13,7 +13,6 @@ const contactLogo = {
   'facebook': ['fab', 'fa-facebook', 'fa-1x'],
   'blog': ['fas', 'fa-blog']
 }
-
 const contactLogoWeb = {
   'github': 'https://github.com/Muscardinus94',
   'instagram': 'https://www.instagram.com/kjh_0809/',
