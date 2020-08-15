@@ -15,6 +15,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
+  transition: .3s;
 }
 
 .main-nav div {
@@ -23,19 +24,60 @@ body {
   font-size: 20px;
   padding: 20px;
   margin: 20px;
+  line-height: inherit;
   transition: 0.5s;
   width: 150px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.main-nav div:hover {
-  background-color: #fff;
-  color: #000;
+.main-nav div:before,
+.main-nav div:after {
+  content: attr(data-link);
+  position: absolute;
+  width: inherit;
+  text-align: center;
+  transition: .3s;
+}
+
+.main-nav div:before {
+  top: 0;
+  left: 0;
+}
+
+.main-nav div:after {
+  top: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.main-nav div:hover:before {
+  top: -100%;
+}
+
+.main-nav div:hover:after {
+  top: 0;
+}
+
+.main-nav:hover {
+  background-color: rgba(0, 0, 0, 0.178);
+  box-shadow: 0 0 20px #fff;
 }
 
 .main-contents {
   flex-grow: 1;
   display: grid;
+}
+
+.home,
+.about,
+.interest,
+.contact {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-name: slideShow;
+  animation-duration: 2s;
 }
 
 .home {
@@ -45,17 +87,9 @@ body {
   align-items: center;
 }
 
-.home>p {
+.home p {
   font-size: 45px;
   color: white;
-}
-
-.home i {
-  transition: 0.5s;
-}
-
-.home i:hover {
-  transform: scale(1.1);
 }
 
 .fa-anchor {
@@ -68,7 +102,8 @@ body {
   padding: 10px;
   width: 600px;
   background-color: transparent;
-  transition: background linear 300ms, color linear 300ms
+  transition: .3s;
+  border-radius: 10px;
 }
 
 .button:hover {
@@ -97,7 +132,50 @@ body {
 .contact {
   display: grid;
   justify-items: center;
+  align-items: center;
   grid-template-rows: 1fr 1fr 1fr;
+}
+
+.gitig a {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 80px;
+  font-size: 40px;
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+  color: #000000;
+}
+
+.gitig a:before {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: 0;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+.gitig a:hover:before {
+  height: 100%;
+}
+
+.gitig a i {
+  position: relative;
+  transition: 0.3s;
+}
+
+.gitig a:hover i {
+  transform: rotateY(360deg);
+  color: #fff;
+}
+
+.gitig i {
+  color: #000;
 }
 
 #phone {
@@ -127,7 +205,7 @@ body {
 }
 
 .interest i:hover {
-  transform: scale(1.1);
+  transform: rotateY(350deg);
 }
 
 .copyright {
@@ -135,4 +213,10 @@ body {
   text-align: center;
   bottom: 10px;
   width: 100%;
+}
+
+@keyframes slideShow {
+  100% {
+    opacity: 1;
+  }
 }

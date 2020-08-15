@@ -8,13 +8,17 @@ const interestLogo = {
   'js': ['fab', 'fa-js', 'fa-10x'],
 }
 const contactLogo = {
-  'github': ['fab', 'fa-github', 'fa-3x'],
-  'instagram': ['fab', 'fa-instagram', 'fa-3x'],
+  'github': ['fab', 'fa-github', 'fa-1x'],
+  'instagram': ['fab', 'fa-instagram', 'fa-1x'],
+  'facebook': ['fab', 'fa-facebook', 'fa-1x'],
+  'blog': ['fas', 'fa-blog']
 }
 
 const contactLogoWeb = {
   'github': 'https://github.com/Muscardinus94',
   'instagram': 'https://www.instagram.com/kjh_0809/',
+  'facebook': 'https://www.facebook.com/profile.php?id=100007002820645',
+  'blog': 'https://muscardinus.tistory.com/',
 }
 const phoneNumber = "+821029766446";
 const emailAddress = "9028364@gmail.com";
@@ -48,7 +52,9 @@ function showHome() {
   let button = document.createElement('button');
   button.classList.add('button');
   button.innerText = "Explore About Jae";
-  button.addEventListener('click', showAbout, {once: true});
+  button.addEventListener('click', showAbout, {
+    once: true
+  });
   div.appendChild(i);
   div.appendChild(p);
   div.appendChild(button);
@@ -97,15 +103,15 @@ function showContact() {
   let gitig = document.createElement('div');
   gitig.classList.add('gitig');
   for (prop in contactLogo) {
+    let a = document.createElement('a');
     let i = document.createElement('i');
     for (logoInfo of contactLogo[prop]) {
       i.classList.add(logoInfo);
     }
     let logoWeb = contactLogoWeb[prop];
-    i.addEventListener("click", () => {
-      window.location.href = logoWeb;
-    });
-    gitig.appendChild(i);
+    a.href = logoWeb;
+    a.appendChild(i);
+    gitig.appendChild(a);
   }
   contact.appendChild(phone);
   contact.appendChild(email);
