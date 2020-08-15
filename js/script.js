@@ -109,6 +109,7 @@ function showContact() {
     }
     let logoWeb = contactLogoWeb[prop];
     a.href = logoWeb;
+    a.target = '_blank';
     a.appendChild(i);
     gitig.appendChild(a);
   }
