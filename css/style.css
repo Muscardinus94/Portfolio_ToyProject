@@ -11,29 +11,91 @@ body {
   height: 100vh;
 }
 
-.main-nav {
+.main-nav-bar {
   margin: 0;
   display: flex;
   justify-content: center;
   transition: .3s;
+  transition-delay: .3s;
+  visibility: hidden;
 }
 
-.main-nav div {
+input[id=trigger] {
+  display: none;
+}
+
+label[for=trigger] {
+  right: 30px;
+  top: 50px;
+  position: absolute;
+  width: 30px;
+  height: 20px;
+}
+
+label[for=trigger] span {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.39);
+  height: 3px;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  transition: .3s;
+}
+
+label[for=trigger] span:nth-child(1) {
+  top: 0;
+}
+
+label[for=trigger] span:nth-child(2) {
+  top: 50%;
+}
+
+label[for=trigger] span:nth-child(3) {
+  top: 100%;
+}
+
+input[id=trigger]:checked+label[for=trigger] span:nth-child(1) {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+input[id=trigger]:checked+label[for=trigger] span:nth-child(2) {
+  opacity: 0;
+}
+
+input[id=trigger]:checked+label[for=trigger] span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+input[id=trigger]:checked~.main-nav-bar {
+  background-color: rgba(0, 0, 0, 0.178);
+  box-shadow: 0 0 20px #fff;
+  visibility: visible;
+}
+
+input[id=trigger]:checked~.main-nav-bar div {
+  opacity: 1;
+}
+
+.main-nav-bar div {
   color: white;
   cursor: pointer;
   font-size: 20px;
   padding: 20px;
   margin: 20px;
   line-height: inherit;
-  transition: 0.5s;
+  transition: all 0.5s;
   width: 150px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  opacity: 0;
 }
 
-.main-nav div:before,
-.main-nav div:after {
+.main-nav-bar div:before,
+.main-nav-bar div:after {
   content: attr(data-link);
   position: absolute;
   width: inherit;
@@ -41,28 +103,23 @@ body {
   transition: .3s;
 }
 
-.main-nav div:before {
+.main-nav-bar div:before {
   top: 0;
   left: 0;
 }
 
-.main-nav div:after {
+.main-nav-bar div:after {
   top: 100%;
   left: 0;
   color: #fff;
 }
 
-.main-nav div:hover:before {
+.main-nav-bar div:hover:before {
   top: -100%;
 }
 
-.main-nav div:hover:after {
+.main-nav-bar div:hover:after {
   top: 0;
-}
-
-.main-nav:hover {
-  background-color: rgba(0, 0, 0, 0.178);
-  box-shadow: 0 0 20px #fff;
 }
 
 .main-contents {
