@@ -11,6 +11,10 @@ body {
   height: 100vh;
 }
 
+.main-nav {
+  position: relative;
+}
+
 .main-nav-bar {
   margin: 0;
   display: flex;
@@ -25,7 +29,7 @@ input[id=trigger] {
 }
 
 label[for=trigger] {
-  right: 30px;
+  right: 10px;
   top: 50px;
   position: absolute;
   width: 30px;
