@@ -69,7 +69,7 @@ function showAbout() {
   img.src = "./img/profile.jpg";
   let p = document.createElement('p');
   p.classList.add('introduction');
-  p.innerHTML = "김제형<br>FrontEnd Developer";
+  p.innerHTML = "김제형<br>Career: FrontEnd Developer<br>Hobby: Movie";
   div.appendChild(img);
   div.appendChild(p);
   mainContents.appendChild(div);
