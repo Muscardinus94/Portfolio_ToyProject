@@ -16,12 +16,16 @@ body {
 }
 
 .main-nav-bar {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 80px;
   margin: 0;
   display: flex;
+  align-items: center;
   justify-content: center;
   transition: .3s;
-  transition-delay: .3s;
-  visibility: hidden;
 }
 
 input[id=trigger] {
@@ -29,11 +33,16 @@ input[id=trigger] {
 }
 
 label[for=trigger] {
-  right: 10px;
-  top: 50px;
+  left: 50%;
+  top: 0px;
+  margin-top: 10px;
+  transform: translateX(-50%);
   position: absolute;
   width: 30px;
   height: 20px;
+  cursor: pointer;
+  z-index: 2;
+  transition: .3s;
 }
 
 label[for=trigger] span {
@@ -43,7 +52,6 @@ label[for=trigger] span {
   height: 3px;
   top: 0;
   left: 0;
-  cursor: pointer;
   transition: .3s;
 }
 
@@ -76,11 +84,11 @@ input[id=trigger]:checked+label[for=trigger] span:nth-child(3) {
 input[id=trigger]:checked~.main-nav-bar {
   background-color: rgba(0, 0, 0, 0.178);
   box-shadow: 0 0 20px #fff;
-  visibility: visible;
+  top: 0;
 }
 
-input[id=trigger]:checked~.main-nav-bar div {
-  opacity: 1;
+input[id=trigger]:checked+label[for=trigger] {
+  top: 80px;
 }
 
 .main-nav-bar div {
@@ -95,7 +103,7 @@ input[id=trigger]:checked~.main-nav-bar div {
   text-align: center;
   position: relative;
   overflow: hidden;
-  opacity: 0;
+  z-index: 2;
 }
 
 .main-nav-bar div:before,
@@ -140,11 +148,20 @@ input[id=trigger]:checked~.main-nav-bar div {
   text-decoration: none;
   color: #000;
   font-size: 50px;
+  transition: .3s;
 }
 
 .gamelink:hover {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.445);
+}
+
+.gamelink:hover:before {
+  color: #000000;
+}
+
+.gamelink:hover:before {
+  top: -80px;
 }
 
 .gamelink:before {
@@ -155,6 +172,7 @@ input[id=trigger]:checked~.main-nav-bar div {
   top: -100px;
   left: 50%;
   transform: translateX(-50%);
+  transition: .5s
 }
 
 .home,
