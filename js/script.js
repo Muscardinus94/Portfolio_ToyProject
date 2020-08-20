@@ -23,8 +23,10 @@ const phoneNumber = "+821029766446";
 const emailAddress = "9028364@gmail.com";
 const navHome = document.querySelector('.nav-home');
 const navAbout = document.querySelector('.nav-about');
+const navMiniGame = document.querySelector('.nav-minigame');
 const navInterest = document.querySelector('.nav-interest');
 const navContact = document.querySelector('.nav-contact');
+const gameUrl = "./minigame/index.html";
 
 start();
 
@@ -36,6 +38,7 @@ function start() {
 function navEvent() {
   navHome.addEventListener('click', showHome);
   navAbout.addEventListener('click', showAbout);
+  navMiniGame.addEventListener('click',showMiniGame);
   navInterest.addEventListener('click', showInterest);
   navContact.addEventListener('click', showContact);
 }
@@ -73,6 +76,16 @@ function showAbout() {
   div.appendChild(img);
   div.appendChild(p);
   mainContents.appendChild(div);
+}
+
+function showMiniGame() {
+  mainContents.innerHTML = '';
+  let gameLink = document.createElement('a');
+  gameLink.classList.add('gamelink');
+  gameLink.href = gameUrl;
+  gameLink.target = '_blank';
+  gameLink.innerText = "TIC-TAC-TOE";
+  mainContents.appendChild(gameLink);
 }
 
 function showInterest() {

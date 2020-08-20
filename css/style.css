@@ -129,12 +129,39 @@ input[id=trigger]:checked~.main-nav-bar div {
 .main-contents {
   flex-grow: 1;
   display: grid;
+  position: relative;
+}
+
+.gamelink {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-decoration: none;
+  color: #000;
+  font-size: 50px;
+}
+
+.gamelink:hover {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.445);
+}
+
+.gamelink:before {
+  position: absolute;
+  content: '\f0a7';
+  font-family: Fontawesome;
+  margin-right: 50px;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .home,
 .about,
 .interest,
-.contact {
+.contact,
+.gamelink {
   opacity: 0;
   animation-fill-mode: both;
   animation-name: slideShow;
