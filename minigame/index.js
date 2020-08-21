@@ -13,9 +13,9 @@ const WINNING_COMBINATIONS=[
 
 const whoTurn=document.querySelector('#who-turn');
 const game=document.querySelector('#game');
-const cellElements=document.querySelectorAll('[data-cell]');
+const cellElements=document.querySelectorAll('.cell');
 const winningMessageText=document.querySelector('[data-winning-message-text]');
-const winningMessage=document.querySelector('#winningMessage');
+const winningMessage=document.querySelector('.winning-message');
 const restartButton=document.querySelector('#restartButton');
 const startMessage=document.querySelector('#startMessage');
 const startButton=document.querySelector('#startButton');

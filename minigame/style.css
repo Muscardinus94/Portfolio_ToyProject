@@ -143,7 +143,6 @@ p{
   border-radius: 50%;
 }
 
-
 .cell.circle::before,
 .game.circle .cell:not(.x):not(.circle):hover::before{
   width: var(--mark-size);
