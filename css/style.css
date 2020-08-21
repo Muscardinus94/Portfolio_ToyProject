@@ -96,7 +96,7 @@ input[id=trigger]:checked+label[for=trigger] {
   cursor: pointer;
   font-size: 20px;
   padding: 20px;
-  margin: 20px;
+  margin: 5px;
   line-height: inherit;
   transition: all 0.5s;
   width: 150px;
@@ -154,6 +154,7 @@ input[id=trigger]:checked+label[for=trigger] {
 .gamelink:hover {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.445);
+  letter-spacing: 3px;
 }
 
 .gamelink:hover:before {
