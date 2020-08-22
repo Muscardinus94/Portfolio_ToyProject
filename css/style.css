@@ -11,6 +11,8 @@ body {
   height: 100vh;
 }
 
+/* Navigation Bar */
+
 .main-nav {
   position: relative;
 }
@@ -133,6 +135,8 @@ input[id=trigger]:checked+label[for=trigger] {
 .main-nav-bar div:hover:after {
   top: 0;
 }
+
+/* Main-Contents */
 
 .main-contents {
   flex-grow: 1;
@@ -328,6 +332,8 @@ input[id=trigger]:checked+label[for=trigger] {
   height: 30px;
   line-height: 30px;
 }
+
+/* Keyframes */
 
 @keyframes slideShow {
   100% {
